@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Confirmation</h2>
+
+<mat-dialog-content>
+  <p>{{data.ques}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="proceed()">{{data.button2msg}}</button>
+</mat-dialog-actions>

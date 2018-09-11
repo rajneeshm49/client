@@ -1,0 +1,20 @@
+<mat-toolbar color="accent">
+    <mat-toolbar-row>
+      <button *ngIf="isAdminLoggedIn" routerLinkActive="current" mat-button routerLink="/admin"><h3>Admin Dashboard</h3></button>
+      <span class="spacer"></span>
+      <button *ngIf="!isAdminLoggedIn" routerLinkActive="current" mat-button routerLink="/admin/login">Login</button>
+      <span *ngIf="isAdminLoggedIn" >Welcome Admin ({{admin_name}})</span>&nbsp;&nbsp;&nbsp;
+
+      <div *ngIf="isAdminLoggedIn">
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/admin/categories">Categories</button>
+          <button mat-menu-item routerLink="/admin/products">Products</button>
+          <button mat-menu-item routerLink="/admin/orders">Customer Orders</button>
+        </mat-menu>
+
+      </div>
+      <button *ngIf="isAdminLoggedIn" mat-button (click)="logoutDialog()" >Logout</button>
+    </mat-toolbar-row>
+  </mat-toolbar>

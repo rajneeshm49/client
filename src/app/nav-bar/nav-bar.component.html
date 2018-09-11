@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button *ngIf="isLoggedIn" routerLinkActive="current" mat-button routerLink="/"><h3>WeBuy</h3></button>
+    <span class="spacer"></span>
+    <button *ngIf="!isLoggedIn" routerLinkActive="current" mat-button routerLink="/register">Register</button>
+    <button *ngIf="!isLoggedIn" routerLinkActive="current" mat-button routerLink="/login">Login</button>
+    <span *ngIf="isLoggedIn" >Welcome {{name}}</span>&nbsp;&nbsp;&nbsp;
+    <button *ngIf="isLoggedIn" routerLinkActive="current" mat-button routerLink="/cart">Cart ({{cartCount}})</button>
+    <button *ngIf="isLoggedIn" mat-button (click)="logoutDialog()">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,10 @@
+<form [formGroup]="categoryForm" (ngSubmit)="categoryForm.valid && onAddCategory()" novalidate>
+  <div class="example-container">
+    <div class="list-header-title"><h2>Add Category</h2></div>
+    
+    <mat-form-field>
+      <input id="title" matInput formControlName="category_name" [(ngModel)]="category.category_name" placeholder="Enter category name">
+    </mat-form-field>
+    <button mat-button type="submit" class="mat-raised-button mat-accent" [disabled]="!categoryForm.valid" style="width:50px;">Add</button>
+  </div>
+</form>

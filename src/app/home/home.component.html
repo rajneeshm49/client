@@ -1,0 +1,17 @@
+<div id="card-container">
+<mat-card *ngFor="let product of allProducts" class="example-card">
+  <mat-card-header>
+    <!--div mat-card-avatar class="example-header-image"></div-->
+    <mat-card-title>{{product.title}}</mat-card-title>
+    <mat-card-subtitle>Rs. {{product.price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{url}}/img/products/{{product.image}}">
+  <mat-card-content>
+    <p>{{product.description}}</p>
+  </mat-card-content>
+  <mat-card-actions align="centre">
+    <button mat-button class="mat-raised-button mat-primary" (click)="addToCartDialog(product.id)">Add to cart</button>
+    
+  </mat-card-actions>
+</mat-card>
+</div>
